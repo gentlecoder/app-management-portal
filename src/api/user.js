@@ -19,10 +19,27 @@ export function login(data) {
     data
   })
 }
+
 //登出
 export function logout() {
   return fetch({
     url: port_user.logout,
+    method: 'post'
+  })
+}
+
+//保存
+export function save() {
+  return fetch({
+    url: port_user.save,
+    method: 'post'
+  })
+}
+
+//更换密码
+export function changePwd() {
+  return fetch({
+    url: port_user.changePwd,
     method: 'post'
   })
 }

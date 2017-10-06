@@ -31,9 +31,19 @@ Mock.mock(new RegExp(port_user.login), ({body}) => {
       msg: "账号或密码错误"
     })
   }
-})
+});
 
 Mock.mock(new RegExp(port_user.logout), {
   code: port_code.success,
   msg: "退出成功"
-})
+});
+
+Mock.mock(new RegExp(port_user.save), {
+  code: port_code.success,
+  msg: "保存成功"
+});
+
+Mock.mock(new RegExp(port_user.changePwd), {
+  code: port_code.success,
+  msg: "设置成功"
+});

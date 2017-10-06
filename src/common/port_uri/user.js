@@ -10,6 +10,10 @@
  */
 
 //用户登录
-export const login = "/api/post/user/login"
+export const login = "/api/post/user/login";
 //用户登出
-export const logout = "/api/post/user/logout"
+export const logout = "/api/post/user/logout";
+//用户信息保存
+export const save = "/api/post/user/save";
+//更新密码
+export const changePwd = "/api/post/user/changePwd";
