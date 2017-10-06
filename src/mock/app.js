@@ -13,24 +13,16 @@ import Mock from 'mockjs'
 import {port_code, port_app} from 'common/port_uri'
 
 const data_list = {
-  'srv_list|1-4': [{
+  'list|2-6': [{
     'bp_tenant_id': '@first',
     'create_by': '@first',
     'created_at': '@datetime',
     'deploy_name': '@first',
-    'deploy_status': 'deploy_ok',
-    'run_status': 'running',
-    'version': 'latest'
-  }],
-  'ms_list|1-4':[{
-    'bp_ms_name':'@first',
-    'create_by':'@first',
-    'deploy_name':'@first',
-    'deploy_status':'deploy_ok',
-    'deploy_type':'dc',
-    'kind':'dc',
-    'run_status':'running',
-    'version':'2.0'
+    'deploy_status': '@pick(["deploy_ok","deploying","deploy_failed"])',
+    'run_status': '@pick(["running","stop"])',
+    'version': 'latest',
+    'alarmNum|1-10': 5,
+    'type': '@pick(["service","microservice"])'
   }]
 };
 

@@ -22,24 +22,29 @@
           label="名称"
           align="center"
           min-width="400">
+          <template scope="props">
+            <span v-text="props.row.deploy_name"></span>
+          </template>
         </el-table-column>
         <el-table-column
           prop="deployStatus"
           label="部署状态"
           align="center"
           min-width="200">
-          <!--<template scope="props">-->
-          <!--<span v-text="props.row.tag == 'service' ? 'service' : 'microservice'"></span>-->
-          <!--</template>-->
+          <template scope="props">
+            <div :class="props.row.deploy_status == 'deploy_ok' ? 'circle-green' : props.row.deploy_status == 'deploying' ? 'circle-blue' : 'circle-red'"></div>
+            <span v-text="props.row.deploy_status == 'deploy_ok' ? '部署成功' : props.row.deploy_status == 'deploying' ? '部署中' : '部署失败'"></span>
+          </template>
         </el-table-column>
         <el-table-column
           prop="runStatus"
           label="运行状态"
           align="center"
           min-width="200">
-          <!--<template scope="props">-->
-          <!--<span v-text="props.row.versions.length + '个版本'"></span>-->
-          <!--</template>-->
+          <template scope="props">
+            <div :class="props.row.run_status == 'running' ? 'circle-green' : 'circle-red'"></div>
+            <span v-text="props.row.run_status == 'running' ? '运行中' : '停止'"></span>
+          </template>
         </el-table-column>
         <el-table-column
           prop="alarmNum"
@@ -123,9 +128,9 @@
           length: this.length
         })
           .then(({data: {result, page}}) => {
-            this.table_data = result.srv_list;
+            this.table_data = result.list;
             this.currentPage = page;
-            this.total = result.srv_list.length + result.ms_list.length;
+            this.total = result.list.length;
             this.load_data = false
           })
           .catch(() => {
@@ -246,5 +251,30 @@
   }
 </script>
 <style lang="scss" type="text/scss" rel="stylesheet/scss">
+  .circle-green {
+    position: absolute;
+    left: 65px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #73cf22;
+  }
 
+  .circle-blue {
+    position: absolute;
+    left: 65px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #20a0ff;
+  }
+
+  .circle-red {
+    position: absolute;
+    left: 65px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #ff4949;
+  }
 </style>

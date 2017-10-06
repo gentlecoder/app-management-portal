@@ -47,6 +47,8 @@ import blueprintAddComponent from 'pages/blueprint/add'
 import blueprintDeployComponent from 'pages/blueprint/deploy'
 //app
 import appComponent from 'pages/appmanage'
+//log
+import logComponent from 'pages/log'
 //user info
 import userInfoComponent from 'pages/user/info'
 //user set
@@ -168,6 +170,14 @@ const routes = [{
       auth: true
     }
   }, {
+    path: '/log',
+    name: 'log',
+    component: logComponent,
+    meta: {
+      title: "日志查询",
+      auth: true
+    }
+  }, {
     path: '/user/info',
     name: 'userInfo',
     component: userInfoComponent,
@@ -224,6 +234,6 @@ router.beforeEach((to, from, next) => {
 //路由完成之后的操作
 router.afterEach(route => {
   NProgress.done()
-})
+});
 
 export default router
