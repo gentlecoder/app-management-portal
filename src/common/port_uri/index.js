@@ -16,6 +16,7 @@ import * as port_file from './file'
 import * as port_softrsy from './softrsy'
 import * as port_blueprint from './blueprint'
 import * as port_app from './app'
+import * as port_log from './log'
 
 
 export {
@@ -25,5 +26,6 @@ export {
   port_file,
   port_softrsy,
   port_blueprint,
-  port_app
+  port_app,
+  port_log
 }

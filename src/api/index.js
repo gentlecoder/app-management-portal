@@ -15,6 +15,7 @@ import * as api_user from './user'
 import * as api_softrsy from './softrsy'
 import * as api_blueprint from './blueprint'
 import * as api_app from './app'
+import * as api_log from './log'
 
 const apiObj = {
   api_file,
@@ -22,7 +23,8 @@ const apiObj = {
   api_user,
   api_softrsy,
   api_blueprint,
-  api_app
+  api_app,
+  api_log
 };
 
 const install = function (Vue) {

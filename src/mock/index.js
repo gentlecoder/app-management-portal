@@ -14,6 +14,7 @@ import './user'
 import './softrsy'
 import './blueprint'
 import './app'
+import './log'
 
 Mock.setup({
   timeout: '200-1000'

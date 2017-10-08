@@ -57,9 +57,6 @@
           header-align="center"
           min-width="280">
           <template scope="props">
-            <!--<router-link :to="{name: 'blueprintDeploy', params: {name: props.row.name}}" tag="span">-->
-            <!--<el-button type="info" size="small" icon="edit">部署</el-button>-->
-            <!--</router-link>-->
             <el-button type="success" size="small" icon="arrow-right" @click="start(props.row)">启动</el-button>
             <el-button type="warning" size="small" icon="minus" @click="stop(props.row)">停止</el-button>
             <el-button type="danger" size="small" icon="delete" @click="delete_data(props.row)">删除</el-button>
